@@ -3,9 +3,11 @@ package java_design_patterns.gof_structural.composite;
 public class CompositeDemo {
 
     public static void main(String[] args) {
-
-        Employee CEO = new Employee("Bob", "CEO", 100000);
-
+        
+        String ceoName = "Bob";
+        int ceoSal = 100000;
+        Employee CEO = new Employee(ceoName, "CEO", ceoSal);
+        
         Employee headDev = new Employee("John", "Head of Development", 80000);
         Employee headMarketing = new Employee("Sarah", "Head of Sales & Marketing", 70000);
 
@@ -29,7 +31,7 @@ public class CompositeDemo {
         //print all employees of the organization
         System.out.println(CEO);
 
-        for (Employee headEmployee : CEO.getSubordinates()) {
+        for (Employee headEmployee : CEO.getSubordinates(ceoName)) {
             System.out.println(headEmployee);
 
             for (Employee employee : headEmployee.getSubordinates()) {
