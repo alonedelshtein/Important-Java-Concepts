@@ -27,6 +27,18 @@ public class Employee {
     public List<Employee> getSubordinates(){
         return subordinates;
     }
+    
+    public int getSal(String name){        
+        if(name != this.name)
+            return -1;
+        return this.salary;
+    }
+
+    public List<Employee> getSubordinates(String name, int sal){
+        if(name != this.name)
+            return new ArrayList<Employee>();
+        return subordinates;
+    }
 
     @Override
     public String toString(){
